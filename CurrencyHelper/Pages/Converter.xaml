@@ -1,0 +1,454 @@
+﻿<Page x:Class="CurrencyHelper.Pages.Converter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:CurrencyHelper.ViewModel"
+        Title="CurrencyHelper - ваш личный помощник в курсах валют"  
+        MinWidth="1200" 
+        MinHeight="900"
+        mc:Ignorable="d"
+        d:DesignHeight="900" 
+        d:DesignWidth="1200">
+
+
+    <Page.DataContext>
+        <viewModel:ConverterViewModel/>
+    </Page.DataContext>
+
+    <Page.Resources>
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="BorderBrush" Value="#FFA3C9EA"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontFamily" Value="Global User Interface"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="#FFC6E5FF"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4, 0, 0, 4" 
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter 
+                                              HorizontalAlignment="Center" 
+                                              Margin="14,13,14,10"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                            To="#FFA3C9EA"
+                                            Duration="0:0:0.4"
+                                            FillBehavior="HoldEnd"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                            To="#FFC6E5FF"
+                                            Duration="0:0:0.4"
+                                            FillBehavior="HoldEnd"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.BorderBrush).(SolidColorBrush.Color)"
+                                            To="#FF2590E6"
+                                            Duration="0:0:0.4"
+                                            FillBehavior="HoldEnd"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+            </Style.Triggers>
+        </Style>
+
+
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="BorderBrush" Value="#FFA3C9EA"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontFamily" Value="Global User Interface"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="#FFC6E5FF"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="0, 4, 4 , 0" 
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter 
+                                              HorizontalAlignment="Center" 
+                                              Margin="14,13,14,10"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                            To="#FFA3C9EA"
+                                            Duration="0:0:0.4"
+                                            FillBehavior="HoldEnd"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                            To="#FFC6E5FF"
+                                            Duration="0:0:0.4"
+                                            FillBehavior="HoldEnd"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.BorderBrush).(SolidColorBrush.Color)"
+                                            To="#FF2590E6"
+                                            Duration="0:0:0.4"
+                                            FillBehavior="HoldEnd"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+            </Style.Triggers>
+        </Style>
+
+
+        <Style x:Key="NewButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="BorderBrush" Value="#FFA3C9EA"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontFamily" Value="Global User Interface"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="#FFC6E5FF"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter 
+                                              HorizontalAlignment="Center" 
+                                              Margin="14,13,14,10"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                            To="#FFA3C9EA"
+                                            Duration="0:0:0.4"
+                                            FillBehavior="HoldEnd"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                            To="#FFC6E5FF"
+                                            Duration="0:0:0.4"
+                                            FillBehavior="HoldEnd"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.BorderBrush).(SolidColorBrush.Color)"
+                                            To="#FF2590E6"
+                                            Duration="0:0:0.4"
+                                            FillBehavior="HoldEnd"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+
+
+
+
+    <Grid Background="#FFBBDEFB">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="23*"/>
+        </Grid.RowDefinitions >
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions >
+
+
+        <Grid Grid.Column="1" Grid.Row="1" Margin="30,170,616,578">
+            <StackPanel x:Name="Buttons1" Orientation="Horizontal">
+                <Button x:Name="RUR"
+                        Style="{StaticResource ButtonStyle}"
+                        Content="RUR"
+                        Height="50"
+                        Foreground="#FF192127" 
+                        Width="120"/>
+                <Button x:Name="USD"
+                        Content="USD"
+                        Style="{StaticResource NewButtonStyle}"
+                        Height="50"
+                        Foreground="#FF192127" 
+                        Width="120"/>
+                <Button x:Name="EUR"
+                        Content="EUR"
+                        Style="{StaticResource NewButtonStyle}"
+                        Height="50"
+                        Foreground="#FF192127" 
+                        Width="120"/>
+                <Button x:Name="GBP"
+                        Content="GBP"
+                        Style="{StaticResource ButtonStyle1}"
+                        Height="50"
+                        Foreground="#FF192127" 
+                        Width="120"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="1"  Margin="662,170,44,568" Height="90" Grid.ColumnSpan="2">
+            <StackPanel x:Name="Buttons2" 
+                        Orientation="Horizontal" 
+                        VerticalAlignment="Center" 
+                        Margin="0,10,10,20" 
+                        Height="60" 
+                        HorizontalAlignment="Right" >
+                <Button x:Name="RUR2"
+                        Style="{StaticResource ButtonStyle}"
+                        Content="RUR"
+                        Height="50"                     
+                        Foreground="#FF192127" 
+                        Width="120"/>
+                <Button x:Name="USD2"
+                        Content="USD"
+                        Style="{StaticResource NewButtonStyle}"
+                        Height="50"
+                        Foreground="#FF192127" 
+                        Width="120"/>
+                <Button x:Name="EUR2"
+                        Content="EUR"
+                        Style="{StaticResource NewButtonStyle}"
+                        Height="50"
+                        Foreground="#FF192127" 
+                        Width="120"/>
+                <Button x:Name="GBP2"
+                        Content="GBP"
+                        Style="{StaticResource ButtonStyle1}"
+                        Height="50"
+                        Foreground="#FF192127" 
+                        Width="120"/>
+            </StackPanel>
+        </Grid>
+
+
+        <Rectangle x:Name = "Помощник"
+                   Grid.Column = "1"
+                   Grid.Row= "0"
+                   Fill= "#FF06C548"
+                   MaxHeight= "73"
+                   VerticalAlignment= "Top"
+                   Height= "73"/>
+
+        <Viewbox Grid.Column= "1"
+                 Margin= "0,10,19,0" 
+                 Grid.Row="0"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Top"
+                 MaxWidth="68"
+                 Width="55"
+                 Height="52"
+                 MaxHeight="68">
+            <Path Data= "M10.41,7.41L15,12L10.41,16.6L9,15.18L12.18,12L9,8.82M5,3C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3H5Z"
+                  Fill= "White" 
+                  RenderTransformOrigin="0.5,0.5" Height="19.464" Stretch="Fill" Width="19.874">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90.217"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Viewbox >
+
+        <Label x:Name= "Поиск"
+                 Grid.Row="0" 
+                 Grid.Column= "1"
+                 Content= "CHOOSE YOUR CURRENCY AND CONVERT IT!"
+                 Background= "{x:Null}"
+                 BorderBrush= "{x:Null}"
+                 Foreground= "White"
+                 Width= "867"
+                 HorizontalAlignment= "Center"
+                 VerticalAlignment= "Top"
+                 FontSize= "40"
+                 FontFamily= "Global User Interface"
+                 FontStyle = "Normal"
+                 BorderThickness= "0"
+                 Margin= "178,9,155,0"
+                 Height= "63" 
+                 FontWeight="Bold" />
+
+        <Label x:Name="Have"
+               Content="I HAVE"
+               Background="{x:Null}"
+               Grid.Row="1"
+               Width="200" 
+               Grid.Column="1" 
+               Margin="170,100,0,0"
+               Foreground="White"
+               FontSize="50"
+               FontFamily="Global User Interface"
+               FontWeight="Bold"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top" Height="57"/>
+
+        <Label x:Name="Want"
+               Content="I WANT"
+               Background="{x:Null}"
+               Grid.Row="1"
+               Width="200" 
+               Grid.Column="1" 
+               Margin="0,100,194,0"
+               Foreground="White"
+               FontSize="50"
+               FontFamily="Global User Interface"
+               FontWeight="Bold"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Top" Height="57"/>
+
+        <Viewbox x:Name="Arrow1"
+                 Width="48" 
+                 Height="48" 
+                 Grid.Column="1" 
+                 Margin="569,319,583,461" 
+                 Grid.Row="1" 
+                 RenderTransformOrigin="0.5,0.5"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center">
+            <Viewbox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="134.957"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Viewbox.RenderTransform>
+            <Path Data="M19,17.59L17.59,19L7,8.41V15H5V5H15V7H8.41L19,17.59Z" 
+                  Fill="White" />
+        </Viewbox>
+
+        <Viewbox x:Name="Arrow2"
+                 Width="48" 
+                 Height="48" 
+                 Grid.Column="1"
+                 Margin="549,343,603,437"
+                 Grid.Row="1" 
+                 RenderTransformOrigin="0.5,0.5"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center">
+            <Viewbox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-44.736"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Viewbox.RenderTransform>
+            <Path Data="M19,17.59L17.59,19L7,8.41V15H5V5H15V7H8.41L19,17.59Z" 
+                Fill="White" />
+        </Viewbox>
+        <Rectangle x:Name="Having"                 
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Center" 
+                 Margin="30,255,0,353"
+                 Fill="#FFC6E5FF"
+                 StrokeThickness="2"
+                 Stroke="#FFA3C9EA" 
+                 RadiusY="30"
+                 RadiusX="30" Height="220" Width="481"/>
+        <TextBox x:Name="TXHaving"
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 Width="481"
+                 Height="200"
+                 BorderThickness="0"       
+                 Background="{x:Null}" 
+                 BorderBrush="{x:Null}" 
+                 SelectionBrush="#FF54595D"
+                 FontSize="40"
+                 Padding="60"
+                 MaxLength="14"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Center"
+                 FontWeight="Bold"
+                 FontFamily="Global User Interface" 
+                 Margin="30,270,0,358" Foreground="#FF192127" PreviewTextInput="TXHaving_PreviewTextInput"/>
+
+
+        <Rectangle x:Name="Wanting"                
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="481"
+            Height="220"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center" 
+            Margin="0,255,57,353"
+            Fill="#FFC6E5FF"
+            StrokeThickness="2"
+            Stroke="#FFA3C9EA" 
+            RadiusY="30"
+            RadiusX="30"/>
+        <TextBox x:Name="TXWanting"
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 Width="481"
+                 BorderThickness="0"
+                 Height="200"
+                 Background="{x:Null}" 
+                 BorderBrush="{x:Null}" 
+                 SelectionBrush="#FF54595D"
+                 FontSize="40"
+                 Padding="60"
+                 MaxLength="14"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Center"
+                 FontWeight="Bold"
+                 FontFamily="Global User Interface" 
+                 Margin="0,270,57,358" 
+                 Foreground="#FF192127" PreviewTextInput="TXWanting_PreviewTextInput">
+        </TextBox>
+
+    </Grid >
+
+</Page >

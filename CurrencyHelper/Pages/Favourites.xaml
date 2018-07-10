@@ -1,0 +1,73 @@
+﻿<Page x:Class="CurrencyHelper.Pages.Favourites"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:CurrencyHelper.ViewModel"
+        Title="CurrencyHelper - ваш личный помощник в курсах валют"  
+        MinWidth="1200" 
+        MinHeight="900"
+        mc:Ignorable="d"
+        d:DesignHeight="900" 
+        d:DesignWidth="1200">
+
+    <Page.DataContext>
+        <viewModel:FavouritesViewModel/>
+    </Page.DataContext>
+
+
+
+
+    <Grid Background="#FFBBDEFB">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="23*"/>
+        </Grid.RowDefinitions >
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions >
+
+
+        <Rectangle x:Name = "Помощник"
+                   Grid.Column = "1"
+                   Grid.Row= "0"
+                   Fill= "#FF06C548"
+                   MaxHeight= "73"
+                   VerticalAlignment= "Top"
+                   Height= "73" Grid.RowSpan="2" />
+
+        <Viewbox  Grid.Column= "1"
+                  Margin= "0,6,18,0" 
+                  Grid.Row="0"
+                  HorizontalAlignment="Right"
+                  VerticalAlignment="Top"
+                  MaxWidth="68"
+                  Width="56"
+                  Height="52"
+                  MaxHeight="68">
+            <Path Data="M20,18H4V6H20M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M11,17H13V16H14A1,1 0 0,0 15,15V12A1,1 0 0,0 14,11H11V10H15V8H13V7H11V8H10A1,1 0 0,0 9,9V12A1,1 0 0,0 10,13H13V14H9V16H11V17Z" 
+                  Fill="White" />
+        </Viewbox>
+
+        <Label x:Name= "Поиск"
+                 Grid.Column= "1"
+                 Content= "EXPLORE YOUR FAVOURITE CURRENCIES!"
+                 Background= "{x:Null}"
+                 BorderBrush= "{x:Null}"
+                 Foreground= "White"
+                 Width= "841"
+                 HorizontalAlignment= "Center"
+                 VerticalAlignment= "Top"
+                 FontSize= "40"
+                 FontFamily= "Global User Interface"
+                 FontStyle = "Normal"
+                 BorderThickness= "0"
+                 Margin= "206,10,153,0"
+                 Height= "63"
+                 Grid.RowSpan="2" 
+               FontWeight="Bold"/>
+
+    </Grid >
+
+</Page >
