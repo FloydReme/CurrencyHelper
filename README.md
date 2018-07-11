@@ -5,3 +5,12 @@
 
 # CurrencyHelper
 App which helps to get the exchange rates!
+
+# Used libraries and add-ons
+
+Name  | Reason
+----------------|----------------------
+[Material Design Toolkit](https://github.com/ButchersBoy/MaterialDesignInXamlToolkit)| Provides necessary elements for the app
+[Anglesharp](https://github.com/AngleSharp) | Parses web pages for giving you some information
+# To-Do
+* Screenshots
