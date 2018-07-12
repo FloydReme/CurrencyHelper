@@ -14,7 +14,9 @@ Name  | Reason
 [Anglesharp](https://github.com/AngleSharp) | Parses web pages for giving you some information
 
 # News
-`11.07.18` Created README for the app
+Date| Event
+----|-----
+`11.07.18`| Created README for the app
 # To-Do
 - [ ] Screenshots
 - [ ] New Design
