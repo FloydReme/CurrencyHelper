@@ -1,7 +1,7 @@
 `❗WARNING! Program is not ready yet❗`
 
 
-![alt text](https://pp.userapi.com/c845321/v845321824/9b3eb/jSOOl8sx-Ls.jpg)
+![alt text](https://pp.userapi.com/c844618/v844618203/a6ee2/oR5U_KQpp6M.jpg)
 
 # CurrencyHelper
 App which helps to get the exchange rates!
