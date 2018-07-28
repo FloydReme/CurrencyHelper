@@ -137,7 +137,6 @@
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="Viewmodel.cs" />
     <Compile Include="ViewModel\ConverterViewModel.cs" />
     <Compile Include="ViewModel\FavouritesViewModel.cs" />
     <Compile Include="ViewModel\FeedbackViewModel.cs" />
@@ -200,6 +199,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Fonts\.vs\slnx.sqlite" />
+    <None Include="Fonts\.vs\VSWorkspaceState.json" />
+    <Resource Include="Fonts\Arial Rounded MT BOLD.ttf" />
+    <Resource Include="Fonts\Courier_Prime.ttf" />
+    <Resource Include="Fonts\Courier_Prime_Bold.ttf" />
+    <Resource Include="Fonts\DINRegularAlternate.ttf" />
+    <Resource Include="Fonts\HelveticaNeueCyr-Black.ttf" />
+    <Resource Include="Fonts\HelveticaNeueCyr-Bold.ttf" />
+    <Resource Include="Fonts\HelveticaNeueCyr-Light.ttf" />
+    <Resource Include="Fonts\HelveticaNeueCyr-Medium.ttf" />
+    <Resource Include="Fonts\HelveticaNeueCyr-MediumItalic.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -235,6 +245,16 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Иконка.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fonts\.vs\Fonts\v15\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\favorite.svg" />
+    <Content Include="Icons\settings.svg" />
+    <Content Include="Icons\telegram.svg" />
+    <Content Include="Icons\two-circling-arrows.svg" />
+    <Content Include="Icons\web-page-home.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
