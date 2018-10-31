@@ -1,4 +1,4 @@
-# Initial page
+# CurrencyHelper
 
 App which helps to get the exchange rates!
 
